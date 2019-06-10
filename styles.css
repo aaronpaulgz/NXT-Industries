@@ -9,7 +9,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('backo.jpeg');
+    background: url('images/background.jpeg');
     background-size: 100vw;
     background-repeat: none;
     position: relative; 
