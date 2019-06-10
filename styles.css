@@ -1,0 +1,160 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+   }
+   
+   body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('backo.jpeg');
+    background-size: 100vw;
+    background-repeat: none;
+    position: relative; 
+   }
+
+   .planet1{
+       width: 10%;
+       filter: blur(1px);
+       position: absolute;
+       top: 5%;
+       right: 5%;
+       z-index: 1;
+       animation: planet1 1.5s;
+       animation-fill-mode: forwards;
+       animation-delay: 1.7s;
+       opacity: 0;
+       animation-timing-function: ease;
+   }
+
+   @keyframes planet1 {
+        from{
+            opacity: 0;
+            transform: translateX(-5px)
+        }
+        to{
+            opacity: 1;
+            transform: translateX(5px)
+            
+        }
+   }
+   
+   .planet2{
+       width: 20%;
+       filter: blur(1px);
+       position: absolute;
+       top: 80%;
+       right: 90%;
+       z-index: 2;
+       animation: planet2 1.5s;
+       animation-fill-mode: forwards;
+       animation-delay: 1.9s;
+       opacity: 0;
+       animation-timing-function: ease;
+   }
+
+   @keyframes planet2 {
+    from{
+        opacity: 0;
+        /* transform: translate(10px); */
+    }
+    to{
+        opacity: 1;
+        transform: translate(-10px);
+    }
+}
+   
+   .planet3{
+       width: 15%;
+       filter: blur(1px);
+       position: absolute;
+       top: 25%;
+       right: 60%;
+       z-index: 3;
+       animation: planet3 1.5s;
+       animation-fill-mode: forwards;
+       animation-delay: 2.1s;
+       opacity: 0;
+       animation-timing-function: ease-out;
+   }
+
+   @keyframes planet3 {
+    from{
+        opacity: 0;
+        transform: translate(-40px);
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+   .container{
+    display: grid;
+    width: 70vw;
+    grid-template-rows: 3fr 1fr;
+    z-index: 5;
+   }
+
+   .x, .y{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+   }
+
+   .x{
+       animation: logo 1s;
+   }
+
+   @keyframes logo{
+       from{
+           opacity: 0;
+        }
+        
+        to{
+            opacity: 1;
+            animation-fill-mode: forwards;
+       }
+   }
+
+   .y{
+    animation: btnY 1.5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes btnY{
+    from{
+        opacity: 0;
+     }
+     
+     to{
+         opacity: 1;
+    }
+}
+    
+   .button {
+    background: none;
+    color: whitesmoke;
+    width: 240px;
+    height: 40px;
+    border: 1px solid whitesmoke;
+    font-size: 18px;
+    border-radius: 20px;
+    transition: .6s;
+    overflow: hidden;
+   }
+   
+   .button:focus {
+    outline: none;
+   }
+   
+   .button:hover {
+    background: white;
+    cursor: pointer;
+    color: black;
+    transform: scale(1.05);
+   }
+   
