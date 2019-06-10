@@ -1,23 +1,26 @@
-html, body {
+html{
     margin: 0;
     padding: 0;
+    height: 100%;
     width: 100%;
    }
    
 body {
+    margin: 0;
+    padding: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('images/background.jpeg');
-    background-size: 100vw;
+    background: url('images/background.jpg');
+    background-size: 100% 100%;
     background-repeat: none;
     position: relative; 
    }
-
+   
 .planet1{
     width: 10%;
-    filter: blur(1px);
+    filter: blur(.5px);
     position: absolute;
     top: 5%;
     right: 5%;
@@ -42,9 +45,9 @@ body {
    
 .planet2{
     width: 20%;
-    filter: blur(1px);
+    filter: blur(.5px);
     position: absolute;
-    top: 80%;
+    top: 60%;
     right: 90%;
     z-index: 2;
     animation: planet2 1.5s;
@@ -67,7 +70,7 @@ body {
    
    .planet3{
        width: 15%;
-       filter: blur(1px);
+       filter: blur(.5px);
        position: absolute;
        top: 25%;
        right: 60%;
