@@ -17,7 +17,7 @@ body {
     background-repeat: none;
     position: relative; 
    }
-   
+
 .planet1{
     width: 10%;
     filter: blur(.5px);
@@ -48,7 +48,7 @@ body {
     filter: blur(.5px);
     position: absolute;
     top: 60%;
-    right: 90%;
+    right: 89%;
     z-index: 2;
     animation: planet2 1.5s;
     animation-fill-mode: forwards;
@@ -72,7 +72,7 @@ body {
        width: 15%;
        filter: blur(.5px);
        position: absolute;
-       top: 25%;
+       top: 20%;
        right: 60%;
        z-index: 3;
        animation: planet3 1.5s;
@@ -146,10 +146,6 @@ body {
     font-size: 18px;
     border-radius: 20px;
     transition: .6s;
-    overflow: hidden;
-}
-   
-.button:focus {
     outline: none;
 }
    
@@ -158,4 +154,98 @@ body {
     cursor: pointer;
     color: black;
     transform: scale(1.05);
+}
+
+/* --- MEDIA QUERIES --- */
+
+@media only screen and (max-width: 768px){
+    .mainlogo{
+        width: 70vw;
+    }
+
+    .button{
+        width: 200px;
+        height: 30px;
+        font-size: 14px;
+        animation: changeColor 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+        animation-direction: alternate-reverse;
+        animation-delay: 3s;
+    }
+
+    @keyframes changeColor{
+        from{
+            transform: scale(1);
+            color: black;
+            background: whitesmoke;
+        }
+        to{
+            transform: scale(1);
+            color: white;
+            background: none;
+        }
+    }
+
+    .planet1{
+        width: 15%;
+    }
+
+    .planet2{
+        width: 40%;
+        top: 70%;
+        right: 80%;
+    }
+
+    .planet3{
+        width: 20%;
+        top: 30%;
+        right: 70%;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .mainlogo{
+        width: 70vw;
+    }
+
+    .button{
+        width: 200px;
+        height: 30px;
+        font-size: 14px;
+        animation: changeColor 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+        animation-direction: alternate-reverse;
+        animation-delay: 3s;
+    }
+
+    @keyframes changeColor{
+        from{
+            transform: scale(1);
+            color: black;
+            background: whitesmoke;
+        }
+        to{
+            transform: scale(1);
+            color: white;
+            background: none;
+        }
+    }
+
+    .planet1{
+        width: 15%;
+    }
+
+    .planet2{
+        width: 30%;
+        top: 70%;
+        right: 80%;
+    }
+
+    .planet3{
+        width: 25%;
+        top: 30%;
+        right: 65%;
+    }
 }
