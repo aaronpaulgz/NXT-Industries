@@ -1,0 +1,622 @@
+html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+   }
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../images/background.jpg');
+    background-size: 100% 100%;
+    background-repeat: none;
+    position: relative;
+    font-family: Ubuntu;
+    color: white;
+   }
+
+.planet1{
+    width: 10%;
+    filter: blur(.5px);
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    z-index: 1;
+    animation: planet1 1.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.7s;
+    opacity: 0;
+    animation-timing-function: ease;
+}
+
+@keyframes planet1 {
+    from{
+        opacity: 0;
+        transform: translateX(-5px)
+    }
+    to{
+        opacity: 1;
+        transform: translateX(5px)
+    }
+}
+
+.planet2{
+    width: 20%;
+    filter: blur(.5px);
+    position: absolute;
+    top: 75%;
+    right: 89%;
+    z-index: 2;
+    animation: planet2 1.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.9s;
+    opacity: 0;
+    animation-timing-function: ease;
+}
+
+@keyframes planet2 {
+    from{
+        opacity: 0;
+        /* transform: translate(10px); */
+    }
+    to{
+        opacity: 1;
+        transform: translate(-10px);
+    }
+}
+
+   .planet3{
+       width: 15%;
+       filter: blur(.5px);
+       position: absolute;
+       top: 20%;
+       right: 60%;
+       z-index: 3;
+       animation: planet3 1.5s;
+       animation-fill-mode: forwards;
+       animation-delay: 2.1s;
+       opacity: 0;
+       animation-timing-function: ease-out;
+   }
+
+   @keyframes planet3 {
+    from{
+        opacity: 0;
+        transform: translate(-40px);
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.container{
+    display: grid;
+    width: 70vw;
+    grid-template-rows: 3fr 1fr;
+    z-index: 5;
+    background: transparent;
+}
+
+.x, .y{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.x{
+    animation: logo 1s;
+}
+
+@keyframes logo{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+        animation-fill-mode: forwards;
+    }
+}
+
+.y{
+    animation: btnY 1.5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes btnY{
+    from{
+        opacity: 0;
+     }
+
+     to{
+         opacity: 1;
+    }
+}
+
+.button {
+    background: none;
+    color: whitesmoke;
+    width: 240px;
+    height: 40px;
+    border: 1px solid whitesmoke;
+    font-size: 18px;
+    border-radius: 20px;
+    transition: .6s;
+    outline: none;
+}
+
+.button:hover {
+    background: white;
+    cursor: pointer;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* --- MEDIA QUERIES --- */
+
+@media only screen and (max-width: 768px){
+    .mainlogo{
+        width: 70vw;
+    }
+
+    .button{
+        width: 200px;
+        height: 30px;
+        font-size: 14px;
+        animation: changeColor 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+        animation-direction: alternate-reverse;
+        animation-delay: 3s;
+    }
+
+    @keyframes changeColor{
+        from{
+            transform: scale(1);
+            color: black;
+            background: whitesmoke;
+        }
+        to{
+            transform: scale(1);
+            color: white;
+            background: none;
+        }
+    }
+
+    .planet1{
+        width: 15%;
+    }
+
+    .planet2{
+        width: 40%;
+        top: 70%;
+        right: 80%;
+    }
+
+    .planet3{
+        width: 20%;
+        top: 25%;
+        right: 70%;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .mainlogo{
+        width: 70vw;
+    }
+
+    .button{
+        width: 200px;
+        height: 30px;
+        font-size: 14px;
+        animation: changeColor 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+        animation-direction: alternate-reverse;
+        animation-delay: 3s;
+    }
+
+    @keyframes changeColor{
+        from{
+            transform: scale(1);
+            color: black;
+            background: whitesmoke;
+        }
+        to{
+            transform: scale(1);
+            color: white;
+            background: none;
+        }
+    }
+
+    .planet1{
+        width: 15%;
+    }
+
+    .planet2{
+        width: 30%;
+        top: 70%;
+        right: 80%;
+    }
+
+    .planet3{
+        width: 25%;
+        top: 30%;
+        right: 65%;
+    }
+}
+
+/* SOLAR SYSTEM */
+
+.sun-container{
+    position: absolute;
+    right: 75%;
+    top: 65%;
+    cursor: pointer;
+}
+
+.solarsystem-sun{
+    width: 45vw;
+    margin: 0;
+    padding: 0;
+    /* display: none; */
+}
+
+.sun-container2{
+    position: absolute;
+    right: 75%;
+    top: 65%;
+}
+
+.solarsystem-sun2{
+    width: 45vw;
+    margin: 0;
+    padding: 0;
+    opacity: 0.5;
+    cursor: pointer;
+    transform: rotate(30deg);
+    animation: sunopacity2 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+}
+
+@keyframes sunopacity2{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 0.5;
+    }
+}
+.planeta{
+  transition-duration: 0.3s;
+}
+.planeta:hover{
+  transform: scale(1.1) !important;
+  transition-duration: 0.3s;
+
+}
+.mercury-container{
+    position: absolute;
+    right: 78%;
+    top: 72%;
+    animation: mercury 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes mercury{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.solarsystem-mercury{
+    width: 4vw;
+    margin: 0;
+    padding: 0;
+}
+
+.venus-container{
+    position: absolute;
+    right: 72%;
+    top: 64%;
+    animation: venus 2s;
+    animation-delay: .8s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes venus{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.solarsystem-venus{
+    width: 6vw;
+    margin: 0;
+    padding: 0;
+}
+.earth-container{
+    position: absolute;
+    right: 62%;
+    top: 54%;
+    animation: earth 2s;
+    animation-delay: 1.6s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes earth{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.solarsystem-earth{
+    width: 9vw;
+    margin: 0;
+    padding: 0;
+}
+.mars-container{
+    position: absolute;
+    right: 55%;
+    top: 51%;
+    animation: mars 2s;
+    animation-delay: 2.4s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes mars{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+.solarsystem-mars{
+    width: 5vw;
+    margin: 0;
+    padding: 0;
+}
+.jupiter-container{
+    position: absolute;
+    right: 40%;
+    top: 31%;
+    animation: jupiter 2s;
+    animation-delay: 3.2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes jupiter{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.solarsystem-jupiter{
+    width: 15vw;
+    margin: 0;
+    padding: 0;
+}
+.saturn-container{
+    position: absolute;
+    right: 25%;
+    top: 21%;
+    animation: jupiter 2s;
+    animation-delay: 4s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes jupiter{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.solarsystem-saturn{
+    width: 16vw;
+    margin: 0;
+    padding: 0;
+}
+.uranus-container{
+    position: absolute;
+    right: 14%;
+    top: 15%;
+    animation: uranus 2s;
+    animation-delay: 4.8s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes uranus{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.solarsystem-uranus{
+    width: 12vw;
+    margin: 0;
+    padding: 0;
+}
+.neptune-container{
+    position: absolute;
+    right: 3%;
+    top: 8%;
+    animation: neptune 2s;
+    animation-delay: 5.6s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes neptune{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.solarsystem-neptune{
+    width: 10vw;
+    margin: 0;
+    padding: 0;
+}
+
+.logo-container{
+    width: 4vw;
+    margin: 0;
+    padding: 0;
+}
+
+.logo{
+    width: 22vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.txt-container{
+    position: absolute;
+    top: 20%;
+    left: 3%;
+    line-height: 22px;
+}
+
+.planetModalInfoComponent{
+  animation-name: logo;
+  animation-duration: 0.5s;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  text-align: center !important;
+  display: table;
+}
+.planetModalInfoComponent .containerModal
+{
+  width: 70%;
+  margin-left: 15%;
+  text-align: center;
+}
+
+.level{
+  width: 100%;
+  height: auto;
+  display : flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.level-item{
+  text-align: center;
+  flex-grow: 1;
+}
+.planetModalInfoComponent .controlls .previousPlanet{
+  position: absolute;
+  top: calc(50% - 14.5px);
+  left: 60px;
+  text-align: left;
+  transition-duration: 0.3s;
+  width: 50px;
+
+  cursor: pointer;
+
+}
+.planetModalInfoComponent .controlls .nextPlanet{
+  position: absolute;
+  top: calc(50% - 14.5px) !important;
+  transition-duration: 0.3s;
+  width: 50px;
+  right: 60px;
+  cursor: pointer;
+  text-align: right;
+}
+.planetModalInfoComponent .controlls .previousPlanet:hover{
+  left: 55px;
+  transition-duration: 0.3s;
+}
+.planetModalInfoComponent .controlls .nextPlanet:hover{
+  right: 55px;
+  transition-duration: 0.3s;
+}
+.goBackBtn{
+  width: 100px;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  bottom: 20px;
+  left: 60px;
+  position: absolute;
+  cursor: pointer;
+  transform: scale(1.2) !important;
+}
+
+.goBackBtn img{
+  width: 10px;
+}
+@media screen and (max-width: 720px){
+  .level{
+    flex-direction: column !important;
+  }
+  .level-item{
+    margin: 10px;
+  }
+  .planetModalInfoComponent .controlls .nextPlanet{
+    right: 50px !important;
+    top: 70px !important;
+
+  }
+  .planetModalInfoComponent .controlls .previousPlanet{
+    left: 50px !important;
+    top: 70px !important;
+  }
+  .planetModalInfoComponent .containerModal{
+    width: 80% !important;
+    margin-left: 10% !important;
+  }
+}

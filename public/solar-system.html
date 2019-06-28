@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <title>Our Solar System</title>
+</head>
+<body>
+    <div id="app">
+      <div class="logo-container">
+          <a href="../index.html">
+              <img src="../images/nxtlogo.png" alt="" class="logo">
+          </a>
+      </div>
+      <div v-if="!planetInfoModal" class="txt-container">
+          <span>
+              Click on a planet to <br>
+              learn about it
+          </span>
+      </div>
+      <div v-if="!planetInfoModal" class="hidden-when-planet-info-modal-active">
+        <div class="sun-container2" @click="togglePlanetInfo({planetName:'Sun', index: 0,})">
+                <img src="../images/planets/sun.png" alt="" class="solarsystem-sun2">
+            </div>
+        <div class="sun-container" @click="togglePlanetInfo({planetName:'Sun', index: 0,})">
+            <img src="../images/planets/sun.png" alt="" class="solarsystem-sun">
+        </div>
+        <div v-for="(planet, index) in planets" v-if="!index == 0" :index="index">
+          <planet v-on:open="togglePlanetInfo($event)" :name="planet.name" :index="index"></planet>
+        </div>
+      </div>
+      <planet-info-modal v-on:goback="closePlanetInfo" v-on:previous="previousPlanet" v-on:next="nextPlanet" v-if="planetInfoModal" :planet="planet"></planet-info-modal>
+    </div>
+    <script src="../scripts/vue.js"></script>
+    <script src="../scripts/app.js"></script>
+</body>
+</html>
