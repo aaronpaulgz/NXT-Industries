@@ -9,49 +9,32 @@
     <title>Our Solar System</title>
 </head>
 <body>
-    <div class="logo-container">
-        <a href="../index.html">
-            <img src="../images/nxtlogo.png" alt="" class="logo">
-        </a>
-    </div>
-    <div class="txt-container">
-        <span>
-            Click on a planet to <br>
-            learn about it
-        </span>
-    </div>
-    <div class="sun-container2">
-            <img src="../images/planets/sun.png" alt="" class="solarsystem-sun2">
+    <div id="app">
+      <div class="logo-container">
+          <a href="../index.html">
+              <img src="../images/nxtlogo.png" alt="" class="logo">
+          </a>
+      </div>
+      <div v-if="!planetInfoModal" class="txt-container">
+          <span>
+              Click on a planet to <br>
+              learn about it
+          </span>
+      </div>
+      <div v-if="!planetInfoModal" class="hidden-when-planet-info-modal-active">
+        <div class="sun-container2" @click="togglePlanetInfo({planetName:'Sun', index: 0,})">
+                <img src="../images/planets/sun.png" alt="" class="solarsystem-sun2">
+            </div>
+        <div class="sun-container" @click="togglePlanetInfo({planetName:'Sun', index: 0,})">
+            <img src="../images/planets/sun.png" alt="" class="solarsystem-sun">
         </div>
-    <div class="sun-container">
-        <img src="../images/planets/sun.png" alt="" class="solarsystem-sun">
+        <div v-for="(planet, index) in planets" v-if="!index == 0" :index="index">
+          <planet v-on:open="togglePlanetInfo($event)" :name="planet.name" :index="index"></planet>
+        </div>
+      </div>
+      <planet-info-modal v-on:goback="closePlanetInfo" v-on:previous="previousPlanet" v-on:next="nextPlanet" v-if="planetInfoModal" :planet="planet"></planet-info-modal>
     </div>
-    <div class="mercury-container">
-        <img src="../images/planets/mercury.png" alt="" class="solarsystem-mercury">
-    </div>
-    <div class="venus-container">
-        <img src="../images/planets/venus.png" alt="" class="solarsystem-venus">
-    </div>
-    <div class="earth-container">
-        <img src="../images/planets/earth.png" alt="" class="solarsystem-earth">
-    </div>
-    <div class="mars-container">
-        <img src="../images/planets/mars.png" alt="" class="solarsystem-mars">
-    </div>
-    <div class="jupiter-container">
-        <img src="../images/planets/jupiter.png" alt="" class="solarsystem-jupiter">
-    </div>
-    <div class="saturn-container">
-        <img src="../images/planets/saturn.png" alt="" class="solarsystem-saturn">
-    </div>
-    <div class="uranus-container">
-        <img src="../images/planets/uranus.png" alt="" class="solarsystem-uranus">
-    </div>
-    <div class="neptune-container">
-        <img src="../images/planets/neptune.png" alt="" class="solarsystem-neptune">
-    </div>
-    <script>
-        
-    </script>
+    <script src="../scripts/vue.js"></script>
+    <script src="../scripts/app.js"></script>
 </body>
 </html>
