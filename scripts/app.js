@@ -1,8 +1,4 @@
 
-<<<<<<< HEAD
-=======
-
->>>>>>> b90ec1815dbaa4b1900232022fbab0cb86d3c0ad
 Vue.component('planet', {
   props:{
     name:{type:String, required: true},
@@ -47,13 +43,8 @@ Vue.component('planetInfoModal',{
       <div class="controlls">
         <div class="goBackBtn" @click="$emit('goback')">
           <div class="level">
-<<<<<<< HEAD
             <div class="level-item image"><img src="../images/simbols/Path.png" alt=""/></div>
           <div class="level-item text">Go Back!</div>
-=======
-            <div class="level-item"><img src="../images/simbols/Path.png" alt=""/></div>
-            <div class="level-item">Go Back!</div>
->>>>>>> b90ec1815dbaa4b1900232022fbab0cb86d3c0ad
           </div>
         </div>
         <div class="previousPlanet" @click="$emit('previous')">
@@ -85,11 +76,7 @@ Vue.component('planetInfoModal',{
   `,
   computed:{
     planetImage:function(){
-<<<<<<< HEAD
       return `../images/planets/${this.planet.name.toLowerCase()}.png`
-=======
-      return `../images/planets/${this.planet.name}.png`
->>>>>>> b90ec1815dbaa4b1900232022fbab0cb86d3c0ad
     }
   }
 
