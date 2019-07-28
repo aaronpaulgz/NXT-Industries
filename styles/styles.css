@@ -585,11 +585,7 @@ body {
   transition-duration: 0.3s;
 }
 .goBackBtn{
-<<<<<<< HEAD
   min-width: 100px;
-=======
-  width: 100px;
->>>>>>> b90ec1815dbaa4b1900232022fbab0cb86d3c0ad
   height: 30px;
   padding-left: 10px;
   padding-right: 10px;
