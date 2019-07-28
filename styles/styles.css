@@ -15,12 +15,11 @@ body {
     justify-content: center;
     align-items: center;
     background: url('../images/background.jpg');
-    background-size: 100% 100%;
-    background-repeat: none;
+    background-size: 100% 100% !important;
     position: relative;
     font-family: Ubuntu;
     color: white;
-   }
+ }
 
 .planet1{
     width: 10%;
@@ -585,7 +584,11 @@ body {
   transition-duration: 0.3s;
 }
 .goBackBtn{
+<<<<<<< HEAD
+  min-width: 100px;
+=======
   width: 100px;
+>>>>>>> b90ec1815dbaa4b1900232022fbab0cb86d3c0ad
   height: 30px;
   padding-left: 10px;
   padding-right: 10px;
@@ -593,16 +596,34 @@ body {
   left: 60px;
   position: absolute;
   cursor: pointer;
+  transition-duration: 0.3s !important;
+
   transform: scale(1.2) !important;
 }
-
+.goBackBtn:hover{
+  transition-duration: 0.3s !important;
+  transform: skewX(10deg) scale(1.2) !important;
+}
 .goBackBtn img{
   width: 10px;
+  margin: 0px !important;
+}
+.goBackBtn .image{
+  margin: 0px 10px 0px 0px !important;
+
+}
+.goBackBtn .text{
+  margin: 0px !important;
+
 }
 @media screen and (max-width: 720px){
-  .level{
+  .level :not(.is-mobile){
     flex-direction: column !important;
   }
+  .goBackBtn{
+    left: 50px !important;
+  }
+
   .level-item{
     margin: 10px;
   }
